@@ -1,0 +1,22 @@
+.TH GEN 1
+.SH NAME
+\fBgen\fR \- substitute in files
+
+.SH SYNOPSIS
+\fBgen\fR COUNTER
+
+.SH DESCRIPTION
+\fBgen\fR prints generic names, determined by the argument COUNT. If COUNT is numeric, exactly COUNT names of all the same length are printed, if it is alphabetic, all names of the same length up to COUNT are printed. The generic names are separated by newlines.
+
+.SH EXAMPLE
+\fBgen z\fR prints the alphabet, as well as \fBgen 26\fR.
+.P
+\fBgen aaa\fR prints every string from 'aaa' to 'zzz'.
+.SH STATUS
+0 on success and 1 when it prints the help message.
+
+.SH BUGS
+None known at the moment.
+
+.SH AUTHOR
+Praise at a.regenfuss@gmx.de
