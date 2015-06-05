@@ -7,4 +7,5 @@ LIBS = -lm
 all : gen
 gen : gen.c
 	$(CC) $(CFLAGS) gen.c $(LIBS) -o gen
-
+clean :
+	rm -f gen
