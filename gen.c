@@ -10,7 +10,6 @@ int isname(char* s, int len);
 
 int main(int argc, char** argv)
 {
-	int al,len,lim;
 	char* s;
 
 	if(argc!=2)
@@ -19,27 +18,8 @@ int main(int argc, char** argv)
 		exit(1);
 	}
 
-	if(isnum(argv[1],strlen(argv[1])))al=0;
-	else if(isname(argv[1],strlen(argv[1])))al=1;
-	else
-	{
-		fprintf(stderr,"error: special characters in the counter, exiting.\n");
-		exit(2);
-	}
-
-	len=al?strlen(argv[1]):(atoi(argv[1])<=1?1:ceil(log(atoi(argv[1]))/log(26)));
-	s=(char*)malloc((sizeof(char)*len)+1);
-
-	if(!s)
-	{
-		fprintf(stderr,"error: could not allocate any memory, exiting.\n");
-		exit(3);
-	}
-
-	s[len]='\0';
-	lim=al?:atoi(argv[1]);
-	while(len-->0)s[len]='a';
 	
+
 	while(al?strncmp(s,argv[1],strlen(s)):lim-->1)
 	{
 		puts(s);
