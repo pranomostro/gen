@@ -3,6 +3,7 @@
 #include <ctype.h>
 #include <string.h>
 #include <math.h>
+#include <errno.h>
 
 void strninc(char* s, int len);
 int isname(char* s, int len);
@@ -23,8 +24,11 @@ int main(int argc, char** argv)
 
 	if(isname(argv[1],len))
 		goto prbegin;
-	lim=strol(argv[1],NULL,10);
+
+	lim=strtol(argv[1],NULL,10);
 	len=ceil(log(lim)/log(26));
+
+	printf("%i\n", len);
 
 	if(errno)
 	{
@@ -33,13 +37,15 @@ int main(int argc, char** argv)
 	}
 
 	prbegin:
-	s=(char*)malloc(sizeof(char)*len));
+	s=(char*)malloc(sizeof(char)*len);
 
 	if(!s)
 	{
 		fprintf(stderr,"error: no memory left, exiting.\n");
 		exit(3);
 	}
+
+	for(int c=0; c<len; c++)s[c]='a';
 
 	while(lim?strncmp(s,argv[1],strlen(s)):lim-->1)
 	{
