@@ -5,12 +5,12 @@
 #include <math.h>
 
 void strninc(char* s, int len);
-int isnum(char* s, int len);
 int isname(char* s, int len);
 
 int main(int argc, char** argv)
 {
 	char* s;
+	int len, lim=0;
 
 	if(argc!=2)
 	{
@@ -18,9 +18,30 @@ int main(int argc, char** argv)
 		exit(1);
 	}
 
-	
+	len=strlen(argv[1]);
+	errno=0;
 
-	while(al?strncmp(s,argv[1],strlen(s)):lim-->1)
+	if(isname(argv[1],len))
+		goto prbegin;
+	lim=strol(argv[1],NULL,10);
+	len=ceil(log(lim)/log(26));
+
+	if(errno)
+	{
+		fprintf(stderr,"error: no number found in COUNTER, exiting.\n");
+		exit(2);
+	}
+
+	prbegin:
+	s=(char*)malloc(sizeof(char)*len));
+
+	if(!s)
+	{
+		fprintf(stderr,"error: no memory left, exiting.\n");
+		exit(3);
+	}
+
+	while(lim?strncmp(s,argv[1],strlen(s)):lim-->1)
 	{
 		puts(s);
 		strninc(s,strlen(s));
@@ -29,17 +50,6 @@ int main(int argc, char** argv)
 	puts(s);
 
 	free(s);
-	return 0;
-}
-
-int isnum(char* s, int len)
-{
-	char* t=s;
-	while(isspace(*s))s++;
-	if(!(isdigit(*s)||*s=='-'))return 0;
-	while(isdigit(*s++))
-		if(!*s||(t-s)>=len)
-			return 1;
 	return 0;
 }
 
