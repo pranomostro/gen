@@ -45,7 +45,10 @@ int main(int argc, char** argv)
 		exit(3);
 	}
 
-	for(int c=0; c<len; c++)s[c]='a';
+	s[len]='\0';
+	while(len-->0)s[len]='a';
+
+	printf("%i\n",lim);
 
 	while(lim?strncmp(s,argv[1],strlen(s)):lim-->1)
 	{
