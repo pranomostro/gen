@@ -26,18 +26,16 @@ int main(int argc, char** argv)
 		goto prbegin;
 
 	lim=strtol(argv[1],NULL,10);
-	len=ceil(log(lim)/log(26));
+	len=(lim==1?lim:ceil(log(lim)/log(26)));
 
-	printf("%i\n", len);
-
-	if(errno)
+	if(errno||lim<=0)
 	{
-		fprintf(stderr,"error: no number found in COUNTER, exiting.\n");
+		fprintf(stderr,"error: no usable number found in COUNTER, exiting.\n");
 		exit(2);
 	}
 
 	prbegin:
-	s=(char*)malloc(sizeof(char)*len);
+	s=(char*)malloc(sizeof(char)*len+1);
 
 	if(!s)
 	{
@@ -46,16 +44,14 @@ int main(int argc, char** argv)
 	}
 
 	s[len]='\0';
-	while(len-->0)s[len]='a';
+	for(int c=0; c<len; c++)s[c]='a';
 
-	printf("%i\n",lim);
-
-	while(lim?strncmp(s,argv[1],strlen(s)):lim-->1)
+	while(lim?lim-->1:strncmp(s,argv[1],len))
 	{
 		puts(s);
 		strninc(s,strlen(s));
 	}
-	
+
 	puts(s);
 
 	free(s);
