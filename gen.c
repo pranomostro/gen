@@ -22,19 +22,18 @@ int main(int argc, char** argv)
 	len=strlen(argv[1]);
 	errno=0;
 
-	if(isname(argv[1],len))
-		goto prbegin;
-
-	lim=strtol(argv[1],NULL,10);
-	len=(lim==1?lim:ceil(log(lim)/log(26)));
-
-	if(errno||lim<=0)
+	if(!isname(argv[1],len))
 	{
-		fprintf(stderr,"error: no usable number found in COUNTER, exiting.\n");
-		exit(2);
+		lim=strtol(argv[1],NULL,10);
+		len=(lim==1?lim:ceil(log(lim)/log(26)));
+
+		if(errno||lim<=0)
+		{
+			fprintf(stderr,"error: no usable number found in COUNTER, exiting.\n");
+			exit(2);
+		}
 	}
 
-	prbegin:
 	s=(char*)malloc(sizeof(char)*len+1);
 
 	if(!s)
