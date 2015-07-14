@@ -3,15 +3,16 @@
 #include <ctype.h>
 #include <string.h>
 #include <math.h>
+#include <inttypes.h>
 #include <errno.h>
 
-void strninc(char* s, int len);
-int isname(char* s, int len);
+void strninc(char* s, size_t len);
+uint64_t isname(char* s, size_t len);
 
 int main(int argc, char** argv)
 {
 	char* s;
-	int len, lim=0;
+	uint64_t len, lim=0;
 
 	if(argc!=2)
 	{
@@ -43,7 +44,8 @@ int main(int argc, char** argv)
 	}
 
 	s[len]='\0';
-	for(int c=0; c<len; c++)s[c]='a';
+
+	for(uint64_t c=0; c<len; c++)s[c]='a';
 
 	while(lim?lim-->1:strncmp(s,argv[1],len))
 	{
@@ -57,17 +59,17 @@ int main(int argc, char** argv)
 	return 0;
 }
 
-int isname(char* s, int len)
+uint64_t isname(char* s, size_t len)
 {
 	char* t=s;
 	while(isspace(*s))s++;
 	while(islower(*s++))
-		if(!*s||(t-s)>=len)
+		if(!*s||(unsigned)(t-s)>=len)
 			return 1;
 	return 0;
 }
 
-void strninc(char* s, int len)
+void strninc(char* s, size_t len)
 {		
 		char* t=s;
 		s+=len-1;
