@@ -7,16 +7,17 @@
 #include <errno.h>
 
 void strninc(char* s, size_t len);
-uint64_t isname(char* s, size_t len);
+unsigned isname(char* s, size_t len);
 
 int main(int argc, char** argv)
 {
 	char* s;
-	uint64_t len, lim=0;
+	unsigned long len, c, lim=0;
 
 	if(argc!=2)
 	{
-		fprintf(stderr,"error: no arguments given, expecting something like 'gen COUNTER', exiting.\n");
+		fprintf(stderr,"error: no arguments given, expecting something like \
+'gen COUNTER', exiting.\n");
 		exit(1);
 	}
 
@@ -45,7 +46,7 @@ int main(int argc, char** argv)
 
 	s[len]='\0';
 
-	for(uint64_t c=0; c<len; c++)s[c]='a';
+	for(c=0; c<len; c++)s[c]='a';
 
 	while(lim?lim-->1:strncmp(s,argv[1],len))
 	{
@@ -59,7 +60,7 @@ int main(int argc, char** argv)
 	return 0;
 }
 
-uint64_t isname(char* s, size_t len)
+unsigned isname(char* s, size_t len)
 {
 	char* t=s;
 	while(isspace(*s))s++;
