@@ -3,7 +3,6 @@
 #include <ctype.h>
 #include <string.h>
 #include <math.h>
-#include <inttypes.h>
 #include <errno.h>
 
 void strninc(char* s, size_t len);
