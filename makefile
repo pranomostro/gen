@@ -1,4 +1,4 @@
-PREFIX = /usr
+PREFIX = /usr/local
 TARGET = gen
 SRC = ${TARGET}.c
 
