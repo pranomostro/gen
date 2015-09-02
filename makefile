@@ -3,7 +3,7 @@ TARGET = gen
 SRC = ${TARGET}.c
 
 CC = gcc
-CFLAGS = -Wall -W -Wextra -O3 -fexpensive-optimizations\
+CFLAGS = -Wall -Wextra -O3 -fexpensive-optimizations\
 -funroll-loops -fno-builtin -s -std=c89
 LIBS = -lm
 

@@ -35,7 +35,7 @@ int main(int argc, char** argv)
 		}
 	}
 
-	s=(char*)malloc(sizeof(char)*len+1);
+	s=(char*)calloc(sizeof(char), len+1);
 
 	if(!s)
 	{
