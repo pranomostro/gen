@@ -4,7 +4,7 @@ SRC = ${TARGET}.c
 
 CC = gcc
 CFLAGS = -Wall -Wextra -O3 -fexpensive-optimizations\
--funroll-loops -fno-builtin -s -std=c89 -static
+-funroll-loops -fno-builtin -s -std=c89
 LIBS = -lm
 
 all: ${TARGET}
