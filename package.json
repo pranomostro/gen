@@ -1,0 +1,9 @@
+{
+	"name": "gen",
+	"version": "0.3",
+	"repo": "scharlatan/gen",
+	"description": "generate generic names",
+	"keywords": ["utility", "names", "words", "filter"],
+	"license": "MIT",
+	"install": "make install"
+}
