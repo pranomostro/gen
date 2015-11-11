@@ -4,7 +4,7 @@ PREFIX = /usr/local
 TARGET = gen
 
 CC = gcc
-CFLAGS = -Wall -std=c99 -pedantic
+CFLAGS = -Wall -std=c89 -pedantic
 LIBS = -lm
 
 all: ${TARGET}
