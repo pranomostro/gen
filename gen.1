@@ -1,25 +1,32 @@
 .TH GEN 1
 .SH NAME
-\fBgen\fR \- generate generic names
+gen \- generate generic names
 
 .SH SYNOPSIS
-\fBgen\fR COUNTER
+gen COUNTER
 
 .SH DESCRIPTION
-\fBgen\fR prints generic names, determined by the argument COUNT.
+gen prints generic names, determined by the argument COUNT.
 If COUNT is numeric, exactly COUNT names of all the same length are printed,
 if it is alphabetic, all names of the same length up to COUNT are printed.
 The generic names are separated by newlines.
 
 .SH EXAMPLE
-\fBgen z\fR prints the alphabet, as well as \fBgen 26\fR.
-.P
-\fBgen aaa\fR prints every string from 'aaa' to 'zzz'.
+.TP
+.B gen z
+prints the alphabet, as well as gen 26.
+.TP
+.B gen aaa
+prints every string from 'aaa' to 'zzz'.
+
 .SH STATUS
 0 on success and 1 when it prints the help message.
 
 .SH BUGS
 The code probably sucks.
+.TP
+It does not take any file names as arguments, you have to use
+shell redirection or cat.
 
 .SH AUTHOR
 Praise at a.regenfuss@gmx.de
