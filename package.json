@@ -3,7 +3,9 @@
 	"version": "0.3",
 	"repo": "scharlatan/gen",
 	"description": "generate generic names",
-	"keywords": ["utility", "names", "words", "filter"],
 	"license": "MIT",
-	"install": "make install"
+	"install": "make install",
+	"makefile": "makefile",
+	"keywords": ["utility", "names", "generate"],
+	"src": ["gen.c"]
 }
