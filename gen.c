@@ -15,8 +15,7 @@ int main(int argc, char** argv)
 
 	if(argc!=2)
 	{
-		fprintf(stderr,"error: no arguments given, expecting something like \
-'gen COUNTER', exiting.\n");
+		fprintf(stderr,"gen COUNTER\n");
 		exit(1);
 	}
 
