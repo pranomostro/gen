@@ -15,21 +15,21 @@ int main(int argc, char** argv)
 
 	if(argc!=2)
 	{
-		fprintf(stderr,"gen COUNTER\n");
+		fprintf(stderr, "gen COUNTER\n");
 		exit(1);
 	}
 
 	len=strlen(argv[1]);
 	errno=0;
 
-	if(!isname(argv[1],len))
+	if(!isname(argv[1], len))
 	{
-		lim=strtol(argv[1],NULL,10);
+		lim=strtol(argv[1], NULL, 10);
 		len=(lim==1?lim:ceil(log(lim)/log(26)));
 
 		if(errno||lim<=0)
 		{
-			fprintf(stderr,"error: no usable number found in COUNTER, exiting.\n");
+			fprintf(stderr, "error: no usable number found in COUNTER, exiting.\n");
 			exit(2);
 		}
 	}
@@ -38,7 +38,7 @@ int main(int argc, char** argv)
 
 	if(!s)
 	{
-		fprintf(stderr,"error: no memory left, exiting.\n");
+		fprintf(stderr, "error: no memory left, exiting.\n");
 		exit(3);
 	}
 
@@ -46,10 +46,10 @@ int main(int argc, char** argv)
 
 	for(c=0; c<len; c++)s[c]='a';
 
-	while(lim?lim-->1:strncmp(s,argv[1],len))
+	while(lim?lim-->1:strncmp(s, argv[1], len))
 	{
 		puts(s);
-		strninc(s,strlen(s));
+		strninc(s, strlen(s));
 	}
 
 	puts(s);
