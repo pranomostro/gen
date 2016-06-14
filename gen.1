@@ -3,7 +3,7 @@
 gen \- generate generic names
 
 .SH SYNOPSIS
-gen COUNTER
+gen COUNT
 
 .SH DESCRIPTION
 gen prints generic names, determined by the argument COUNT.
@@ -11,7 +11,7 @@ If COUNT is numeric, exactly COUNT names of all the same length are printed,
 if it is alphabetic, all names of the same length up to COUNT are printed.
 The generic names are separated by newlines.
 
-.SH EXAMPLE
+.SH EXAMPLES
 .TP
 .B gen z
 prints the alphabet, as well as gen 26.
@@ -27,6 +27,10 @@ The code probably sucks.
 .TP
 It does not take any file names as arguments, you have to use
 shell redirection or cat.
+
+.SH "SEE ALSO"
+.IR seq(1),
+.IR perl(1) (which can do string increment)
 
 .SH AUTHOR
 Praise at pranomestro@gmail.com
