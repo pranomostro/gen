@@ -22,7 +22,7 @@ prints:
 	zzz
 
 It is okay for generating test data, and it is required by
-[mg](https://www.github.com/scharlatan/mg)
+[mg](https://www.github.com/pranomostro/mg)
 
 Requirements
 ------------
