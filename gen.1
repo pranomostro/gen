@@ -12,13 +12,19 @@ if it is alphabetic, all names of the same length up to COUNT are printed.
 The generic names are separated by newlines.
 
 .SH EXAMPLES
-.TP
-.B gen z
-.TP
+.PP
+.fi
+.RS
+$ gen z
+.RE
+.fi
 prints the alphabet, as well as gen 26.
-.TP
-.B gen 17576
-.TP
+.PP
+.fi
+.RS
+gen 17576
+.RE
+.fi
 prints every string from 'aaa' to 'zzz'.
 
 .SH STATUS
@@ -26,13 +32,14 @@ prints every string from 'aaa' to 'zzz'.
 
 .SH BUGS
 The code probably sucks.
-.TP
+.PP
 It does not take any file names as arguments, you have to use
 shell redirection or cat.
 
 .SH "SEE ALSO"
 .IR seq(1),
-.IR perl(1) (which can do string increment)
+.IR perl(1)
+(which can do string increment)
 
 .SH AUTHOR
 Praise at pranomestro@gmail.com
