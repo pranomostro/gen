@@ -69,7 +69,7 @@ unsigned isname(char* s, size_t len)
 }
 
 void strninc(char* s, size_t len)
-{		
+{
 		char* t=s;
 		s+=len-1;
 		for(;*s=='z'&&s!=t;s--)
