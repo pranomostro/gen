@@ -16,19 +16,12 @@ prints:
 	aaa
 	aab
 	aac
-	[lines cut out]
+	#[lines cut out]
 	zzx
 	zzy
 	zzz
 
-It is okay for generating test data, and it is required by
-[mg](https://www.github.com/pranomostro/mg)
-
-Requirements
-------------
-
-make and a c89 compiler are needed, as well as
-some standard unix tools. You should be fine.
+gen can be used for generating test data or generic filenames.
 
 Installation
 ------------
@@ -41,4 +34,4 @@ configured otherwise.
 License
 -------
 
-It's MIT! Cheer!
+[MIT license](./LICENSE).
