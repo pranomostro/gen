@@ -15,7 +15,7 @@ int main(int argc, char** argv)
 
 	if(argc!=2)
 	{
-		fprintf(stderr, "gen COUNTER\n");
+		fprintf(stderr, "gen counter\n");
 		exit(1);
 	}
 
@@ -29,7 +29,7 @@ int main(int argc, char** argv)
 
 		if(errno||lim<=0)
 		{
-			fprintf(stderr, "error: no usable number found in COUNTER, exiting.\n");
+			fprintf(stderr, "error: no usable number found in counter, exiting.\n");
 			exit(2);
 		}
 	}
