@@ -1,43 +1,53 @@
-.TH GEN 1
-.SH NAME
-gen \- generate generic names
+.Dd May 11, 2017
+.Dt GEN 1
+.Os
 
-.SH SYNOPSIS
-gen count
+.Sh NAME
+.Nm gen
+.Nd generate generic names
 
-.SH DESCRIPTION
-gen prints generic names, determined by the argument count.
-If count is numeric, exactly count names of all the same length are printed,
-if it is alphabetic, all names of the same length up to count are printed.
-The generic names are separated by newlines.
+.Sh SYNOPSIS
+.Nm
+.Ar count
 
-.SH EXAMPLES
-.PP
-.fi
-.RS
-$ gen z
-.RE
-.fi
-prints the alphabet, as well as gen 26.
-.PP
-.fi
-.RS
-gen 17576
-.RE
-.fi
-prints every string from 'aaa' to 'zzz'.
+.Sh DESCRIPTION
+.Nm
+prints generic, lowercase, ascending alphabetic names, specified by
+.Ar count .
+If
+.Ar count
+is numeric, exactly count names will be printed, if it is alphabetic,
+all names of the same length up to count are printed. The names
+are separated by newlines.
 
-.SH STATUS
-0 on success and 1 when it prints the usage.
+.Sh EXAMPLES
+Print the alphabet:
+.Pp
+.Dl $ gen z
+.Dl a
+.Dl b
+.Dl ...
+.Dl z
+.Pp
+Print every string from
+.Sq aaa
+to
+.Sq gen :
+.Pp
+.Dl $ gen 4174
+.Dl aaa
+.Dl aab
+.Dl ...
+.Dl gen
 
-.SH BUGS
-It does not take any file names as arguments, you have to use
-shell redirection or cat.
+.Sh EXIT STATUS
+.Ex -std
 
-.SH "SEE ALSO"
-.IR seq(1),
-.IR perl(1)
-(which can do string incrementing as well)
+.Sh SEE ALSO
+.Xr seq 1 ,
+and
+.Xr perl 1perl ,
+which can do string incrementation as well.
 
-.SH AUTHOR
-Praise at pranomestro@gmail.com
+.Sh AUTHORS
+.An pranomostro Aq Mt pranomestro@gmail.com
