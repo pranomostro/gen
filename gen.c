@@ -8,6 +8,25 @@
 void strninc(char* s, size_t len);
 unsigned isname(char* s, size_t len);
 
+unsigned isname(char* s, size_t len)
+{
+	char* t=s;
+	while(isspace(*s))s++;
+	while(islower(*s++))
+		if(!*s||(unsigned)(t-s)>=len)
+			return 1;
+	return 0;
+}
+
+void strninc(char* s, size_t len)
+{
+		char* t=s;
+		s+=len-1;
+		for(;*s=='z'&&s!=t;s--)
+				*s='a';
+		++(*s);
+}
+
 int main(int argc, char** argv)
 {
 	char* s;
@@ -56,23 +75,4 @@ int main(int argc, char** argv)
 
 	free(s);
 	return 0;
-}
-
-unsigned isname(char* s, size_t len)
-{
-	char* t=s;
-	while(isspace(*s))s++;
-	while(islower(*s++))
-		if(!*s||(unsigned)(t-s)>=len)
-			return 1;
-	return 0;
-}
-
-void strninc(char* s, size_t len)
-{
-		char* t=s;
-		s+=len-1;
-		for(;*s=='z'&&s!=t;s--)
-				*s='a';
-		++(*s);
 }
