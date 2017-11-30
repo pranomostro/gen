@@ -5,9 +5,6 @@
 #include <math.h>
 #include <errno.h>
 
-void strninc(char* s, size_t len);
-unsigned isname(char* s, size_t len);
-
 unsigned isname(char* s, size_t len)
 {
 	char* t=s;
