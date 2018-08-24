@@ -1,5 +1,5 @@
-Introduction
-============
+Generating sequential names
+===========================
 
 gen is a utility similar to seq, but for characters.
 For example:
